@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="clearfix">
+        <div class="pull-left">
+          <img
+          class="logo-global"
+          width="100"
+          alt="Angular Logo"
+          src="../../../assets/img/Logo_DazaSoftware.png"
+        />
+        </div>
+        <div class="pull-right">
+          <ng-container *ngIf="title_felin" >
+              <h2 class="card-title" >{{title_felin}}</h2>
+          </ng-container>
+        </div>
+      </div>
+</div>
+
+<div class="row">
+    <section>
+        <ng-container *ngIf="image">
+            <img class="img-galery"  src="{{image.url}}" alt="">
+          </ng-container>
+          <div class="content-button">
+            <button class="null" (click)="first()"><img class="btn-cli" src="../../../assets/img/primero.jpg" alt=""></button>
+            <button class="null" (click)="prev()"><img class="btn-cli" src="../../../assets/img/anterior.jpg" alt=""></button>
+            <button class="null" (click)="next()"><img class="btn-cli" src="../../../assets/img/siguiente.jpg" alt=""></button>
+            <button class="null" (click)="last()"><img class="btn-cli" src="../../../assets/img/ultimo.jpg" alt=""></button>
+          </div>
+
+          <button class="btn btn-primary" (click)="newLoad()">Nuevos Felinos</button>
+    </section>
+</div>
+
+  
+  
+  
