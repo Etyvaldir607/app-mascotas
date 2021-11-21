@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="clearfix">
+    <div class="pull-left">
+      <img
+      class="logo-global"
+      width="100"
+      alt="Angular Logo"
+      src="../../../assets/img/Logo_DazaSoftware.png"
+    />
+    </div>
+    <div class="pull-right">
+      <ng-container *ngIf="title_search" >
+        <h2 class="card-title" >{{title_search}}</h2>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="row">
+  <section>
+    <label for="felino"> Raza Felina</label>
+  
+  <ng-container *ngIf="felinos">
+  
+    <select id="felino" name="q" (change)="getFelino($event.target.value)" >
+      <option value="{{felino.name}}"  *ngFor="let felino of felinos" >{{felino.name}}</option>
+    </select>
+  
+  </ng-container>
+  
+  
+  
+  <ng-container  *ngIf="felino" >
+      <table style="border: solid 1px" row="3" columns ="8">
+          <tr>
+            <td>
+              <tr>
+                <th>Id:</th>
+                <td>{{felino.id}}</td>
+              </tr>
+              <tr>
+                <th>Nombre:</th>
+                <td>{{felino.name}}</td>
+              </tr>
+              <tr>
+                <th>Descripcion:</th>
+                <td>{{felino.description}}</td>
+              </tr>
+              <tr>
+                <th>Años de vida:</th>
+                <td>{{felino.life_span}}</td>
+              </tr>
+              <tr>
+                <th>Origen:</th>
+                <td>{{felino.origin}}</td>
+              </tr>
+              <tr>
+                <th>Wiki:</th>
+                <td><a href="{{felino.wikipedia_url}}" >{{felino.wikipedia_url}}</a></td>
+              </tr>
+              <tr>
+                <th>VetStreet:</th>
+                <td><a href="{{felino.vetstreet_url}}">{{felino.vetstreet_url}}</a></td>
+              </tr>
+            </td>
+            <td>
+              <img class="table" src="{{felino.image.url}}" alt="{{felino.name}}" width="{{felino.image.width}}" height="{{felino.image.height}}">
+            </td>
+          </tr>
+        </table>
+  </ng-container>
+  </section>
+</div>
+
